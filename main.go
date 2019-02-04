@@ -1,11 +1,9 @@
 package main
 
 import (
-	"net/http"
+	"github.com/ryutah/cloud-build-example2/server"
 )
 
-func init() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Hello, world"))
-	})
+func main() {
+	server.Start()
 }
