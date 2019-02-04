@@ -1,4 +1,17 @@
 steps:
   - name: "gcr.io/cloud-builders/go"
-    entrypoint: "echo"
-    args: ["HELLOWORLD!!"]
+    dir: "src/github.com/ryutah/cloud-build-example2"
+    entrypoint: "pwd"
+  - name: "gcr.io/cloud-builders/go"
+    entrypoint: "/bin/sh"
+    args:
+      - "-c"
+      - |
+        pwd
+        ls ./
+        echo "END..............."
+    dir: "src/github.com/ryutah/cloud-build-example2"
+  - name: "gcr.io/cloud-builders/go"
+    entrypoint: "ls"
+    args: ["/workspace"]
+    dir: "src/github.com/ryutah/cloud-build-example2"
